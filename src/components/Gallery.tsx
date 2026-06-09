@@ -53,8 +53,7 @@ export default function Gallery() {
       <div className="relative">
         <div
           ref={scrollerRef}
-          className="carousel-scroller flex gap-4 px-6 md:px-[max(1.5rem,calc(50vw-36rem))]"
-          style={{ paddingRight: '1.5rem' }}
+          className="carousel-scroller flex gap-4 px-6"
         >
           {images.map((img, i) => (
             <div
