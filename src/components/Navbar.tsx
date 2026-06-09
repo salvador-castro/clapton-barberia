@@ -81,7 +81,7 @@ export default function Navbar() {
         className={`md:hidden overflow-hidden transition-all duration-400 ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           } bg-dark/98 backdrop-blur-md border-b border-gold/10`}
       >
-        <ul className="flex flex-col px-6 py-4 gap-4">
+        <ul className="flex flex-col items-center px-6 py-4 gap-4">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
