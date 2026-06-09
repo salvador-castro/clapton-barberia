@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = '5493535653313'
 const INSTAGRAM_HANDLE = 'clapton.barbershop'
-const GOOGLE_MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Jujuy+1304+Villa+María+Córdoba'
+const GOOGLE_MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Clapton+BarberShop'
 
 const infoItems = [
   {
