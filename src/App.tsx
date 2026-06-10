@@ -1,6 +1,7 @@
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import AboutUs from './components/AboutUs'
 import Gallery from './components/Gallery'
 import Services from './components/Services'
 import Barbers from './components/Barbers'
@@ -19,6 +20,8 @@ function App() {
     <div className="w-full min-h-screen bg-dark">
       <Navbar />
       <Hero />
+      <SectionDivider />
+      <AboutUs />
       <SectionDivider />
       <Gallery />
       <SectionDivider />
