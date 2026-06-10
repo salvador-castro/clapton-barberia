@@ -22,9 +22,9 @@ function App() {
       <SectionDivider />
       <Gallery />
       <SectionDivider />
-      <Services />
-      <SectionDivider />
       <Barbers />
+      <SectionDivider />
+      <Services />
       <SectionDivider />
       <Info />
       <SectionDivider />
