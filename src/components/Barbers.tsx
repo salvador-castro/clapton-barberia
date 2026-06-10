@@ -11,7 +11,7 @@ const barbers = [
   {
     id: 'agus-sanchez',
     name: 'Agus Sánchez',
-    role: 'Barbero destallista',
+    role: 'Barbero detallista',
     photo: '/equipo/agusSanchez.jpeg',
     description: 'Agustín es parte fundamental de Clapton BarberShop con más de 6 años de experiencia. Con su compromiso y una gran dedicación por su trabajo, se destaca por brindar atención personalizada y lograr que cada cliente se sienta cómodo y bien asesorado. Su profesionalismo y pasión por la barbería lo han convertido en una referencia dentro de nuestro equipo.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
@@ -29,7 +29,7 @@ const barbers = [
   {
     id: 'gena-rainero',
     name: 'Gena Rainero',
-    role: 'Barbero vesátil',
+    role: 'Barbero versátil',
     photo: '/equipo/genaRainero.jpeg',
     description: 'Genaro forma parte de Clapton desde hace más de 3 años. Con su buena onda, amabilidad y trato cordial, se ganó rápidamente el cariño y la confianza de los clientes. Es un profesional atento, agradable y cercano, capaz de hacer sentir cómodo a cualquier persona que pase por el sillón.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
