@@ -145,7 +145,7 @@ export default function Barbers() {
             className="font-bebas text-5xl md:text-7xl text-cream mb-4"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            NUESTRA RECEPCIONISTA
+            RECEPCIONISTA
           </h2>
           <div className="section-divider mx-auto" />
         </div>
