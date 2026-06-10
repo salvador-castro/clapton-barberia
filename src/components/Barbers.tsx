@@ -2,7 +2,7 @@ const barbers = [
   {
     id: 'leo-merindol',
     name: 'Leo Merindol',
-    role: 'Barbero & Colorista',
+    role: 'Barbero experimentado',
     photo: '/equipo/leoMerindol.jpeg',
     description: 'Leandro es el fundador y alma de Clapton. Con más de 18 años de experiencia en el rubro, ha construido una barbería con identidad propia, cuidando cada detalle para que cada visita se convierta en una experiencia. Su pasión por el oficio y su visión fueron clave para darle a Clapton la personalidad que la distingue hoy.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
@@ -11,7 +11,7 @@ const barbers = [
   {
     id: 'agus-sanchez',
     name: 'Agus Sánchez',
-    role: 'Barbero Senior',
+    role: 'Barbero destallista',
     photo: '/equipo/agusSanchez.jpeg',
     description: 'Agustín es parte fundamental de Clapton BarberShop con más de 6 años de experiencia. Con su compromiso y una gran dedicación por su trabajo, se destaca por brindar atención personalizada y lograr que cada cliente se sienta cómodo y bien asesorado. Su profesionalismo y pasión por la barbería lo han convertido en una referencia dentro de nuestro equipo.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
@@ -20,7 +20,7 @@ const barbers = [
   {
     id: 'juan-fernandez',
     name: 'Juan Fernández',
-    role: 'Barbero Especialista',
+    role: 'Barbero experto',
     photo: '/equipo/juanFernandez.jpeg',
     description: 'Juan forma parte del equipo desde hace más de 4 años. Se destaca por su compromiso, atención al detalle y trato cercano con cada cliente. Su experiencia y pasión por la barbería hacen que cada servicio sea una experiencia de calidad, siempre buscando que cada persona se vaya conforme y con su mejor versión.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
@@ -29,7 +29,7 @@ const barbers = [
   {
     id: 'gena-rainero',
     name: 'Gena Rainero',
-    role: 'Barbero & Diseñador',
+    role: 'Barbero vesátil',
     photo: '/equipo/genaRainero.jpeg',
     description: 'Genaro forma parte de Clapton desde hace más de 3 años. Con su buena onda, amabilidad y trato cordial, se ganó rápidamente el cariño y la confianza de los clientes. Es un profesional atento, agradable y cercano, capaz de hacer sentir cómodo a cualquier persona que pase por el sillón.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
@@ -38,7 +38,7 @@ const barbers = [
   {
     id: 'maxi-rubiolo',
     name: 'Maxi Rubiolo',
-    role: 'Barbero Senior',
+    role: 'Barbero innovador',
     photo: '/equipo/maxiRubiolo.jpeg',
     description: 'Maximiliano forma parte de Clapton desde hace más de 2 años. Es el más joven del equipo y se destaca por su buena onda, su personalidad divertida y su pasión por los cortes modernos. Especialista en fades prolijos y precisos, siempre está atento a las últimas tendencias, lo que lo convierte en una gran opción para quienes buscan un estilo actual y fresco.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
