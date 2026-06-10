@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="flex-1">
           <a href="#inicio" className="flex items-center gap-3">
             <img
-              src="/logos/logoHorizontal.PNG"
+              src="/logos/logoHorizontal.webp"
               alt="Clapton Barbershop"
               className="h-8 md:h-10 object-contain"
               fetchPriority="high"

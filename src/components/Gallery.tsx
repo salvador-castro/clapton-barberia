@@ -1,19 +1,22 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { Expand, X } from 'lucide-react'
 
-const images = [
-  { src: '/cortes/IMG_0140.jpeg', alt: 'Corte clásico con degradé' },
-  { src: '/cortes/IMG_0182.jpeg', alt: 'Trabajo de barba' },
-  { src: '/cortes/IMG_1443.jpeg', alt: 'Corte moderno con textura' },
-  { src: '/cortes/IMG_2866.jpeg', alt: 'Fade profesional' },
-  { src: '/cortes/IMG_4913.jpeg', alt: 'Diseño de barba' },
-  { src: '/cortes/IMG_8046.jpeg', alt: 'Corte clásico' },
-  { src: '/otros/IMG_0074.jpeg', alt: 'Ambiente de la barbería' },
-  { src: '/otros/IMG_2142.jpeg', alt: 'Trabajo terminado' },
-  { src: '/otros/IMG_9589.jpeg', alt: 'Detalle del corte' },
-]
+const corteModules = import.meta.glob('/public/cortes/*.{jpeg,jpg,png,webp}')
+const otrosModules = import.meta.glob('/public/otros/*.{jpeg,jpg,png,webp}')
+
+const toImages = (modules: Record<string, unknown>) =>
+  Object.keys(modules)
+    .sort()
+    .map((path) => ({
+      src: path.replace('/public', ''),
+      alt: 'Trabajo en Clapton Barbería',
+    }))
+
+const images = [...toImages(corteModules), ...toImages(otrosModules)]
 
 export default function Gallery() {
   const scrollerRef = useRef<HTMLDivElement>(null)
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   const scroll = (dir: 'left' | 'right') => {
     const el = scrollerRef.current
@@ -58,7 +61,7 @@ export default function Gallery() {
           {images.map((img, i) => (
             <div
               key={img.src}
-              className="carousel-slide w-72 md:w-96 h-80 md:h-112 rounded-2xl overflow-hidden shrink-0 border border-gold/10 hover:border-gold/30 transition-all duration-400 group"
+              className="carousel-slide w-72 md:w-96 h-80 md:h-112 rounded-2xl overflow-hidden shrink-0 border border-gold/10 hover:border-gold/30 transition-all duration-400 group relative"
             >
               <img
                 src={img.src}
@@ -67,6 +70,13 @@ export default function Gallery() {
                 loading={i === 0 ? undefined : 'lazy'}
                 fetchPriority={i === 0 ? 'high' : 'low'}
               />
+              <button
+                onClick={() => setLightbox(img)}
+                aria-label="Ampliar imagen"
+                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-dark/70 border border-gold/30 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-gold hover:text-dark"
+              >
+                <Expand className="w-4 h-4" />
+              </button>
             </div>
           ))}
         </div>
@@ -95,6 +105,28 @@ export default function Gallery() {
           </button>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            aria-label="Cerrar"
+            className="absolute top-5 right-5 w-10 h-10 rounded-full bg-dark/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <img
+            src={lightbox.src}
+            alt={lightbox.alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain border border-gold/20 shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   )
 }

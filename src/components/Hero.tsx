@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/otros/IMG_5767.jpeg"
+          src="/otros/IMG_5767.webp"
           alt="Clapton Barbershop interior"
           className="w-full h-full object-cover object-center"
           fetchPriority="high"
@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="flex justify-center mb-8">
           <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-gold/40 p-1 shadow-[0_0_40px_rgba(201,168,76,0.2)]">
             <img
-              src="/logos/logoCircular.PNG"
+              src="/logos/logoCircular.webp"
               alt="Logo Clapton"
               className="w-full h-full object-contain rounded-full"
             />

@@ -8,7 +8,7 @@ export default function Footer() {
 
           {/* Logo – left */}
           <img
-            src="/logos/logoHorizontal.PNG"
+            src="/logos/logoHorizontal.webp"
             alt="Clapton Barbershop"
             className="h-8 object-contain opacity-80"
             loading="lazy"
