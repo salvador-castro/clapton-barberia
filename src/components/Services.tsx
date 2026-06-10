@@ -7,13 +7,13 @@ const services = [
   },
   {
     id: 'barba',
-    icon: '🪒',
+    icon: '💈',
     name: 'Combo Corte + Barba',
     description: 'El servicio más elegido de Clapton. Un trabajo completo donde combinamos corte de cabello y diseño de barba para lograr una imagen equilibrada, prolija y con personalidad. Atención a cada detalle para que salgas con tu mejor versión.',
   },
   {
     id: 'combo',
-    icon: '💈',
+    icon: '⭐️',
     name: 'Corte VIP (corte cada 10 días o menos)',
     description: 'Pensado para quienes hacen del cuidado personal un hábito. Un servicio exclusivo para clientes que nos visitan semanalmente o cada 10 días, con un valor preferencial y la misma dedicación de siempre. Porque mantener el estilo también tiene sus beneficios.',
   },
@@ -25,15 +25,15 @@ const services = [
   },
   {
     id: 'cejas',
-    icon: '👁️',
+    icon: '🚀',
     name: 'Solo Barba o Pelada',
     description: 'Para quienes buscan mantener su imagen impecable sin necesidad de un corte de cabello. Ya sea un perfilado de barba o el mantenimiento de la pelada, trabajamos cada detalle para lograr un acabado prolijo, limpio y a tu medida.',
   },
   {
     id: 'cejas',
-    icon: '👁️',
+    icon: '✨',
     name: 'Productos',
-    description: 'Hidratación, keratina y tratamientos especiales para el cuidado del cabello y barba.',
+    description: 'Productos Premium para el cuidado masculino. Trabajamos con marcas de primer nivel como Sir Fausto y The Hunter, ofreciendo una selección de productos para cabello, barba y cuidado personal. Calidad profesional para que puedas mantener tu estilo y verte impecable todos los días, incluso después de salir de la barbería.',
   },
 ]
 
