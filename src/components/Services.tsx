@@ -35,7 +35,6 @@ const services = [
     name: 'Productos',
     description: 'Productos Premium para el cuidado masculino. Trabajamos con marcas de primer nivel como Sir Fausto y The Hunter, ofreciendo una selección de productos para cabello, barba y cuidado personal. Calidad profesional para que puedas mantener tu estilo y verte impecable todos los días, incluso después de salir de la barbería.',
   },
-  ,
   {
     id: 'PRE-BODA',
     icon: '🤵🏻',
