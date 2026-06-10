@@ -24,9 +24,9 @@ function App() {
       <SectionDivider />
       <Barbers />
       <SectionDivider />
-      <Info />
-      <SectionDivider />
       <Services />
+      <SectionDivider />
+      <Info />
       <Footer />
       <WhatsAppFab />
     </div>
