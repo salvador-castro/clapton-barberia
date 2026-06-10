@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react'
-import { Expand, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react'
 
 const corteModules = import.meta.glob('/public/cortes/*.{jpeg,jpg,png,webp}')
 const otrosModules = import.meta.glob('/public/otros/*.{jpeg,jpg,png,webp}')
@@ -16,7 +16,21 @@ const images = [...toImages(corteModules), ...toImages(otrosModules)]
 
 export default function Gallery() {
   const scrollerRef = useRef<HTMLDivElement>(null)
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+
+  const lightboxPrev = () => setLightboxIndex(i => i === null ? null : (i - 1 + images.length) % images.length)
+  const lightboxNext = () => setLightboxIndex(i => i === null ? null : (i + 1) % images.length)
+
+  useEffect(() => {
+    if (lightboxIndex === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') lightboxPrev()
+      else if (e.key === 'ArrowRight') lightboxNext()
+      else if (e.key === 'Escape') setLightboxIndex(null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightboxIndex])
 
   const scroll = (dir: 'left' | 'right') => {
     const el = scrollerRef.current
@@ -71,7 +85,7 @@ export default function Gallery() {
                 fetchPriority={i === 0 ? 'high' : 'low'}
               />
               <button
-                onClick={() => setLightbox(img)}
+                onClick={() => setLightboxIndex(i)}
                 aria-label="Ampliar imagen"
                 className="absolute top-3 right-3 w-9 h-9 rounded-full bg-dark/70 border border-gold/30 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-gold hover:text-dark"
               >
@@ -107,24 +121,41 @@ export default function Gallery() {
       </div>
 
       {/* Lightbox */}
-      {lightbox && (
+      {lightboxIndex !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
-          onClick={() => setLightbox(null)}
+          onClick={() => setLightboxIndex(null)}
         >
           <button
-            onClick={() => setLightbox(null)}
+            onClick={() => setLightboxIndex(null)}
             aria-label="Cerrar"
             className="absolute top-5 right-5 w-10 h-10 rounded-full bg-dark/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
           >
             <X className="w-5 h-5" />
           </button>
+
+          <button
+            onClick={(e) => { e.stopPropagation(); lightboxPrev() }}
+            aria-label="Anterior"
+            className="absolute left-4 md:left-8 w-11 h-11 rounded-full bg-dark/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
           <img
-            src={lightbox.src}
-            alt={lightbox.alt}
+            src={images[lightboxIndex].src}
+            alt={images[lightboxIndex].alt}
             onClick={(e) => e.stopPropagation()}
-            className="max-h-[90vh] max-w-[90vw] rounded-2xl object-contain border border-gold/20 shadow-2xl"
+            className="max-h-[90vh] max-w-[80vw] rounded-2xl object-contain border border-gold/20 shadow-2xl"
           />
+
+          <button
+            onClick={(e) => { e.stopPropagation(); lightboxNext() }}
+            aria-label="Siguiente"
+            className="absolute right-4 md:right-8 w-11 h-11 rounded-full bg-dark/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
       )}
     </section>
