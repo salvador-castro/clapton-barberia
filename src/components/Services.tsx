@@ -73,6 +73,35 @@ export default function Services() {
           ))}
         </div>
       </div>
+      {/* Tarifa de servicios */}
+      <div className="w-full max-w-xl mx-auto mt-16 px-6">
+        <div className="glass-card rounded-2xl border border-gold/20 shadow-[0_8px_40px_rgba(0,0,0,0.5)] overflow-hidden">
+          {/* Header */}
+          <div className="bg-linear-to-r from-gold to-gold-light px-8 py-5 text-center">
+            <p className="text-dark text-xs font-bold tracking-[0.3em] uppercase">
+              Tarifa de Servicios
+            </p>
+            <p className="text-dark/70 text-xs font-semibold tracking-widest mt-0.5">
+              Junio 2026
+            </p>
+          </div>
+          {/* Items */}
+          <div className="divide-y divide-gold/10">
+            {[
+              { name: 'Corte de caballero & niño', price: '$23.000' },
+              { name: 'Corte & barba', price: '$25.000' },
+              { name: 'Corte cada 10 días o menos', price: '$20.000' },
+              { name: 'Pelada y barba', price: '$23.000' },
+              { name: 'Solo barba o pelada', price: '$15.000' },
+            ].map((item) => (
+              <div key={item.name} className="flex items-center justify-between px-8 py-4 hover:bg-gold/5 transition-colors duration-200">
+                <span className="text-cream/80 text-sm">{item.name}</span>
+                <span className="text-gold font-bold text-sm tabular-nums">{item.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
