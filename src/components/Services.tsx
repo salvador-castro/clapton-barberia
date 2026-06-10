@@ -74,7 +74,7 @@ export default function Services() {
               >
                 {s.name}
               </h3>
-              <p className="text-cream/60 text-sm leading-relaxed">{s.description}</p>
+              <p className="text-cream/60 text-sm leading-relaxed text-justify">{s.description}</p>
             </div>
           ))}
         </div>
