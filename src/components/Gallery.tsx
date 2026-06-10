@@ -87,7 +87,7 @@ export default function Gallery() {
               <button
                 onClick={() => setLightboxIndex(i)}
                 aria-label="Ampliar imagen"
-                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-dark/70 border border-gold/30 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-gold hover:text-dark"
+                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-dark/70 border border-gold/30 flex items-center justify-center text-gold opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hover:bg-gold hover:text-dark"
               >
                 <Expand className="w-4 h-4" />
               </button>
