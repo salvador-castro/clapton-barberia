@@ -51,6 +51,7 @@ export default function Hero() {
           style={{ fontFamily: "'Bebas Neue', sans-serif", animationDelay: '0.2s' }}
         >
           CLAPTON
+          <span className="sr-only"> Barbershop - Barbería en Villa María, Córdoba</span>
         </h1>
 
         <p

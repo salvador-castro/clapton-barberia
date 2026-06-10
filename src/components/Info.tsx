@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = '5493535653313'
 const INSTAGRAM_HANDLE = 'clapton.barbershop'
-const GOOGLE_MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Clapton+BarberShop'
+const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Clapton+BarberShop/@-32.404125,-63.2462281,17z/data=!3m1!4b1!4m6!3m5!1s0x95cc42d9240afb03:0x8d39feaa3e6a94b!8m2!3d-32.404125!4d-63.2462281'
 
 const infoItems = [
   {
