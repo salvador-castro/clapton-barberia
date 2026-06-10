@@ -46,6 +46,17 @@ const barbers = [
   },
 ]
 
+const recepcionista = [
+  {
+    id: 'mayra-burgos',
+    name: 'Mayra Burgos',
+    role: 'Recepcionista',
+    photo: '/equipo/mayraBurgos.jpeg',
+    description: 'Mayra es la primera sonrisa que te recibe al llegar. Siempre atenta, cordial y predispuesta, se encarga de que cada cliente se sienta cómodo desde el primer momento. Su calidez y buena energía hacen que la experiencia en Clapton BarberShop y Gentleman sea aún más especial, brindando una atención cercana y personalizada tanto en la barbería como en el local de indumentaria.',
+    schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
+  },
+]
+
 export default function Barbers() {
   return (
     <section id="equipo" className="w-full pt-32 pb-24 bg-dark">
@@ -122,6 +133,67 @@ export default function Barbers() {
                   </svg>
                   Reservar turno
                 </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="w-full max-w-6xl mx-auto px-6">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2
+            className="font-bebas text-5xl md:text-7xl text-cream mb-4"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+          >
+            NUESTRA RECEPCIONISTA
+          </h2>
+          <div className="section-divider mx-auto" />
+        </div>
+
+        {/* Cards — flex-wrap justify-center con anchuras responsivas */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {recepcionista.map((b) => (
+            <div
+              key={b.id}
+              id={`barber-${b.id}`}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-card rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 hover:-translate-y-2 transition-all duration-400 group flex flex-col"
+            >
+              {/* Photo */}
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src={b.photo}
+                  alt={b.name}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-dark via-transparent to-transparent" />
+              </div>
+
+              {/* Content — centered text */}
+              <div className="p-6 flex flex-col flex-1 items-center text-center">
+                <div className="mb-3">
+                  <h3
+                    className="font-bebas text-2xl text-cream tracking-wider"
+                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                  >
+                    {b.name}
+                  </h3>
+                  <p className="text-gold text-xs font-semibold tracking-widest uppercase">
+                    {b.role}
+                  </p>
+                </div>
+
+                <p className="text-cream/55 text-sm leading-relaxed mb-4 flex-1">
+                  {b.description}
+                </p>
+
+                {/* Schedule */}
+                <div className="flex items-center justify-center gap-2 mb-5">
+                  <svg className="w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-cream/45 text-xs">{b.schedule}</span>
+                </div>
               </div>
             </div>
           ))}
