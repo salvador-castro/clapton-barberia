@@ -108,7 +108,7 @@ export default function Barbers() {
                   </p>
                 </div>
 
-                <p className="text-cream/55 text-sm leading-relaxed mb-4 flex-1">
+                <p className="text-cream/55 text-sm leading-relaxed mb-4 flex-1 text-justify">
                   {b.description}
                 </p>
 
@@ -140,7 +140,7 @@ export default function Barbers() {
       </div>
       <div className="w-full max-w-6xl mx-auto px-6">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mt-20 mb-16">
           <h2
             className="font-bebas text-5xl md:text-7xl text-cream mb-4"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
@@ -183,7 +183,7 @@ export default function Barbers() {
                   </p>
                 </div>
 
-                <p className="text-cream/55 text-sm leading-relaxed mb-4 flex-1">
+                <p className="text-cream/55 text-sm leading-relaxed mb-4 flex-1 text-justify">
                   {b.description}
                 </p>
 
