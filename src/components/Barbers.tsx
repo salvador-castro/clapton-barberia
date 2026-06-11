@@ -60,7 +60,7 @@ const recepcionista = [
 export default function Barbers() {
   return (
     <section id="equipo" className="w-full pt-32 pb-24 bg-dark">
-      <div className="w-full max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-16">
           <p className="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-3">
@@ -138,7 +138,7 @@ export default function Barbers() {
           ))}
         </div>
       </div>
-      <div className="w-full max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mt-20 mb-16">
           <h2
