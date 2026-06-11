@@ -75,13 +75,13 @@ export default function Barbers() {
           <div className="section-divider mx-auto" />
         </div>
 
-        {/* Cards — flex-wrap justify-center con anchuras responsivas */}
-        <div className="flex flex-wrap justify-center gap-6">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {barbers.map((b) => (
             <div
               key={b.id}
               id={`barber-${b.id}`}
-              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] glass-card rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 hover:-translate-y-2 transition-all duration-400 group flex flex-col"
+              className="glass-card rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 hover:-translate-y-2 transition-all duration-400 group flex flex-col"
             >
               {/* Photo */}
               <div className="relative h-72 overflow-hidden">

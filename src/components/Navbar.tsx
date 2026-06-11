@@ -4,20 +4,47 @@ const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Nosotros', href: '#nosotros' },
   { label: 'Galería', href: '#galeria' },
-  { label: 'Servicios', href: '#servicios' },
   { label: 'Equipo', href: '#equipo' },
+  { label: 'Servicios', href: '#servicios' },
   { label: 'Contacto', href: '#contacto' },
 ]
+
+const sectionIds = navLinks.map((l) => l.href.slice(1))
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id)
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
+      )
+      obs.observe(el)
+      observers.push(obs)
+    })
+
+    return () => observers.forEach((o) => o.disconnect())
+  }, [])
+
+  const handleNavClick = (id: string) => {
+    setActiveSection(id)
+    setMenuOpen(false)
+  }
 
   return (
     <header
@@ -29,7 +56,7 @@ export default function Navbar() {
       <nav className="w-full max-w-6xl mx-auto px-6 flex items-center h-16 md:h-20">
         {/* Logo – left */}
         <div className="flex-1">
-          <a href="#inicio" className="flex items-center gap-3">
+          <a href="#inicio" className="flex items-center gap-3" onClick={() => handleNavClick('inicio')}>
             <img
               src="/logos/logoHorizontal.webp"
               alt="Clapton Barbershop"
@@ -41,16 +68,26 @@ export default function Navbar() {
 
         {/* Desktop links – center */}
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium tracking-widest uppercase text-cream/70 hover:text-gold transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const id = link.href.slice(1)
+            const isActive = activeSection === id
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => handleNavClick(id)}
+                  className={`relative text-sm font-medium tracking-widest uppercase transition-colors duration-300 pb-1
+                    ${isActive ? 'text-gold' : 'text-cream/70 hover:text-gold'}
+                  `}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute bottom-0 left-0 h-px bg-gold transition-all duration-300 ${isActive ? 'w-full' : 'w-0'}`}
+                  />
+                </a>
+              </li>
+            )
+          })}
         </ul>
 
         {/* CTA + mobile burger – right */}
@@ -83,17 +120,23 @@ export default function Navbar() {
           } bg-dark/98 backdrop-blur-md border-b border-gold/10`}
       >
         <ul className="flex flex-col items-center px-6 py-4 gap-4">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="block text-sm font-medium tracking-widest uppercase text-cream/80 hover:text-gold transition-colors"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const id = link.href.slice(1)
+            const isActive = activeSection === id
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => handleNavClick(id)}
+                  className={`block text-sm font-medium tracking-widest uppercase transition-colors
+                    ${isActive ? 'text-gold' : 'text-cream/80 hover:text-gold'}
+                  `}
+                >
+                  {link.label}
+                </a>
+              </li>
+            )
+          })}
           <li>
             <a
               href="https://wa.me/5493535653313?text=Hola!%20quisiera%20reservar%20un%20turno"
