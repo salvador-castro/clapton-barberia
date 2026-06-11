@@ -65,7 +65,7 @@ export default function Services() {
             <div
               key={s.id}
               id={`service-${s.id}`}
-              className="glass-card service-card rounded-2xl p-10 border border-gold/10 cursor-default text-center flex flex-col items-center w-full lg:w-[calc(33.333%-16px)]"
+              className="glass-card service-card rounded-2xl p-10 border border-gold/10 cursor-default text-center flex flex-col items-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
               <span className="text-5xl mb-5 block">{s.icon}</span>
               <h3
