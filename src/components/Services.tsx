@@ -43,10 +43,33 @@ const services = [
   },
 ]
 
+const COLS = 4
+
 export default function Services() {
+  const remainder = services.length % COLS
+  const fullRows = remainder > 0 ? services.slice(0, -remainder) : services
+  const lastRow = remainder > 0 ? services.slice(-remainder) : []
+
+  const renderCard = (s: typeof services[0], extraClass = '') => (
+    <div
+      key={s.id}
+      id={`service-${s.id}`}
+      className={`glass-card service-card rounded-2xl p-10 border border-gold/10 cursor-default text-center flex flex-col items-center${extraClass ? ` ${extraClass}` : ''}`}
+    >
+      <span className="text-5xl mb-5 block">{s.icon}</span>
+      <h3
+        className="font-bebas text-3xl text-gold mb-3 tracking-wider"
+        style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+      >
+        {s.name}
+      </h3>
+      <p className="text-cream/60 text-sm leading-relaxed text-justify">{s.description}</p>
+    </div>
+  )
+
   return (
     <section id="servicios" className="w-full pt-32 pb-24 bg-dark-2">
-      <div className="w-full max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-screen-2xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-3">
             Lo que hacemos
@@ -60,24 +83,17 @@ export default function Services() {
           <div className="section-divider mx-auto" />
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          {services.map((s) => (
-            <div
-              key={s.id}
-              id={`service-${s.id}`}
-              className="glass-card service-card rounded-2xl p-10 border border-gold/10 cursor-default text-center flex flex-col items-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
-            >
-              <span className="text-5xl mb-5 block">{s.icon}</span>
-              <h3
-                className="font-bebas text-3xl text-gold mb-3 tracking-wider"
-                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-              >
-                {s.name}
-              </h3>
-              <p className="text-cream/60 text-sm leading-relaxed text-justify">{s.description}</p>
-            </div>
-          ))}
-        </div>
+        {fullRows.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {fullRows.map((s) => renderCard(s))}
+          </div>
+        )}
+
+        {lastRow.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-6 mt-6">
+            {lastRow.map((s) => renderCard(s, 'w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]'))}
+          </div>
+        )}
       </div>
       {/* Tarifa de servicios */}
       <div className="w-full max-w-xl mx-auto mt-16 px-6">
