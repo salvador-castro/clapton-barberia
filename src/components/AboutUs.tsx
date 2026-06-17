@@ -38,7 +38,7 @@ export default function AboutUs() {
             indumentaria masculina, pensado para que puedas completar tu estilo en un solo lugar.
           </p>
 
-          <p className="text-cream/90 font-medium">
+          <p>
             Más que un corte de cabello, ofrecemos una experiencia. Desde 2014, seguimos creciendo
             junto a nuestros clientes, manteniendo la misma pasión por el oficio y el compromiso con
             la excelencia.
