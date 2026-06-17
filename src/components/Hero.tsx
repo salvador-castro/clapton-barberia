@@ -86,7 +86,7 @@ export default function Hero() {
             id="hero-cta-barberos"
             className="border border-gold/40 text-cream font-medium px-8 py-4 rounded-full text-sm tracking-widest uppercase hover:border-gold hover:text-gold transition-all duration-300"
           >
-            Selecciona barbero
+            Seleccionar barbero
           </a>
         </div>
       </div>
