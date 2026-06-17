@@ -14,7 +14,7 @@ const services = [
   {
     id: 'corte-vip',
     icon: '⭐️',
-    name: 'Corte VIP (corte cada 10 días o menos)',
+    name: 'Corte VIP',
     description: 'Pensado para quienes hacen del cuidado personal un hábito. Un servicio exclusivo para clientes que nos visitan semanalmente o cada 10 días, con un valor preferencial y la misma dedicación de siempre. Porque mantener el estilo también tiene sus beneficios.',
   },
   {
@@ -39,7 +39,7 @@ const services = [
     id: 'PRE-BODA',
     icon: '🤵🏻',
     name: 'PRE-BODA',
-    description: 'El Pre Boda es una experiencia pensada para que vos y tus amigos se preparen para el dia de tu boda. El novio y sus invitados disfrutan de un ambiente relajado, buena música, algo para tomar y nuestros servicios de barbería, compartiendo un momento único antes de la boda.Se pueden cambiar y preparar en el local.La mejor previa para llegar impecables al altar y arrancar la celebración desde temprano, al auténtico estilo Clapton.',
+    description: 'El Pre Boda es una experiencia pensada para que vos y tus amigos se preparen para el dia de tu boda. El novio y sus invitados disfrutan de un ambiente relajado, buena música, algo para tomar y nuestros servicios de barbería, compartiendo un momento único antes de la boda. Se pueden cambiar y preparar en el local. La mejor previa para llegar impecables al altar y arrancar la celebración desde temprano, al auténtico estilo Clapton.',
   },
 ]
 
