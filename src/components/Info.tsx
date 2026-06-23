@@ -1,14 +1,25 @@
-const WHATSAPP_NUMBER = '5493535653313'
-const INSTAGRAM_HANDLE = 'clapton.barbershop'
-const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Clapton+BarberShop/@-32.404125,-63.2462281,17z/data=!3m1!4b1!4m6!3m5!1s0x95cc42d9240afb03:0x8d39feaa3e6a94b!8m2!3d-32.404125!4d-63.2462281'
+const WHATSAPP_NUMBER = '5493535653313';
+const INSTAGRAM_HANDLE = 'clapton.barbershop';
+const GOOGLE_MAPS_URL =
+  'https://www.google.com/maps/place/Clapton+BarberShop/@-32.404125,-63.2462281,17z/data=!3m1!4b1!4m6!3m5!1s0x95cc42d9240afb03:0x8d39feaa3e6a94b!8m2!3d-32.404125!4d-63.2462281';
 
 const infoItems = [
   {
     id: 'info-address',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+        />
       </svg>
     ),
     title: 'Dirección',
@@ -20,7 +31,12 @@ const infoItems = [
     id: 'info-hours',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
       </svg>
     ),
     title: 'Horarios',
@@ -32,7 +48,12 @@ const infoItems = [
     id: 'info-contact',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={1.5}
+          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+        />
       </svg>
     ),
     title: 'Contacto',
@@ -40,13 +61,12 @@ const infoItems = [
     href: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola!%20quisiera%20reservar%20un%20turno`,
     hrefLabel: 'Escribir por WhatsApp →',
   },
-]
+];
 
 export default function Info() {
   return (
     <section id="contacto" className="w-full pt-32 pb-24 bg-dark-2">
       <div className="w-full max-w-6xl mx-auto px-6">
-
         {/* Heading */}
         <div className="text-center mb-16">
           <p className="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-3">
@@ -63,7 +83,6 @@ export default function Info() {
 
         {/* 2-column layout */}
         <div className="grid md:grid-cols-2 gap-8 items-start">
-
           {/* Left: info cards + WhatsApp CTA */}
           <div className="flex flex-col gap-4">
             {infoItems.map((item) => (
@@ -83,7 +102,9 @@ export default function Info() {
                     {item.title}
                   </p>
                   {item.lines.map((line) => (
-                    <p key={line} className="text-cream/70 text-sm">{line}</p>
+                    <p key={line} className="text-cream/70 text-sm">
+                      {line}
+                    </p>
                   ))}
                   {item.href && (
                     <a
@@ -147,15 +168,17 @@ export default function Info() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.5611025515727!2d-63.2462281!3d-32.404125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cc42d9240afb03%3A0x8d39feaa3e6a94b!2sClapton%20BarberShop!5e0!3m2!1ses-419!2sar!4v1781009460933!5m2!1ses-419!2sar"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.1)' }}
+              style={{
+                border: 0,
+                filter: 'invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.1)',
+              }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }

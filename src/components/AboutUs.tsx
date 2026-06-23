@@ -33,9 +33,9 @@ export default function AboutUs() {
           </p>
 
           <p>
-            Además, contamos con{' '}
-            <span className="text-gold font-semibold">Gentleman!</span>, nuestro espacio de indumentaria
-            masculina, pensado para que puedas completar tu estilo en un solo lugar.
+            Además, contamos con <span className="text-gold font-semibold">Gentleman!</span>,
+            nuestro espacio de indumentaria masculina, pensado para que puedas completar tu estilo
+            en un solo lugar.
           </p>
 
           <p>
@@ -68,5 +68,5 @@ export default function AboutUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

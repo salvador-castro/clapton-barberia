@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
@@ -7,56 +7,61 @@ const navLinks = [
   { label: 'Equipo', href: '#equipo' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Contacto', href: '#contacto' },
-]
+];
 
-const sectionIds = navLinks.map((l) => l.href.slice(1))
+const sectionIds = navLinks.map((l) => l.href.slice(1));
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('inicio')
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = []
+    const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
-      const el = document.getElementById(id)
-      if (!el) return
+      const el = document.getElementById(id);
+      if (!el) return;
       const obs = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id)
+          if (entry.isIntersecting) setActiveSection(id);
         },
-        { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
-      )
-      obs.observe(el)
-      observers.push(obs)
-    })
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
 
-    return () => observers.forEach((o) => o.disconnect())
-  }, [])
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   const handleNavClick = (id: string) => {
-    setActiveSection(id)
-    setMenuOpen(false)
-  }
+    setActiveSection(id);
+    setMenuOpen(false);
+  };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? 'bg-dark/95 backdrop-blur-md shadow-lg shadow-black/40 border-b border-gold/10'
-        : 'bg-transparent'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-dark/95 backdrop-blur-md shadow-lg shadow-black/40 border-b border-gold/10'
+          : 'bg-transparent'
+      }`}
     >
       <nav className="w-full max-w-6xl mx-auto px-6 flex items-center h-16 md:h-20">
         {/* Logo – left */}
         <div className="flex-1">
-          <a href="#inicio" className="flex items-center gap-3" onClick={() => handleNavClick('inicio')}>
+          <a
+            href="#inicio"
+            className="flex items-center gap-3"
+            onClick={() => handleNavClick('inicio')}
+          >
             <img
               src="/logos/logoHorizontal.webp"
               alt="Clapton Barbershop"
@@ -69,8 +74,8 @@ export default function Navbar() {
         {/* Desktop links – center */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const id = link.href.slice(1)
-            const isActive = activeSection === id
+            const id = link.href.slice(1);
+            const isActive = activeSection === id;
             return (
               <li key={link.href}>
                 <a
@@ -86,7 +91,7 @@ export default function Navbar() {
                   />
                 </a>
               </li>
-            )
+            );
           })}
         </ul>
 
@@ -107,22 +112,29 @@ export default function Navbar() {
             aria-label="Menú"
             className="md:hidden flex flex-col gap-1.5 p-2"
           >
-            <span className={`block h-0.5 w-6 bg-gold transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block h-0.5 w-6 bg-gold transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block h-0.5 w-6 bg-gold transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            <span
+              className={`block h-0.5 w-6 bg-gold transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-gold transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-gold transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
+            />
           </button>
         </div>
       </nav>
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-400 ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-          } bg-dark/98 backdrop-blur-md border-b border-gold/10`}
+        className={`md:hidden overflow-hidden transition-all duration-400 ${
+          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        } bg-dark/98 backdrop-blur-md border-b border-gold/10`}
       >
         <ul className="flex flex-col items-center px-6 py-4 gap-4">
           {navLinks.map((link) => {
-            const id = link.href.slice(1)
-            const isActive = activeSection === id
+            const id = link.href.slice(1);
+            const isActive = activeSection === id;
             return (
               <li key={link.href}>
                 <a
@@ -135,7 +147,7 @@ export default function Navbar() {
                   {link.label}
                 </a>
               </li>
-            )
+            );
           })}
           <li>
             <a
@@ -151,5 +163,5 @@ export default function Navbar() {
         </ul>
       </div>
     </header>
-  )
+  );
 }

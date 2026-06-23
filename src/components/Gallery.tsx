@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react';
+import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
 
-const corteModules = import.meta.glob('/public/cortes/*.{jpeg,jpg,png,webp}')
-const otrosModules = import.meta.glob('/public/otros/*.{jpeg,jpg,png,webp}')
+const corteModules = import.meta.glob('/public/cortes/*.{jpeg,jpg,png,webp}');
+const otrosModules = import.meta.glob('/public/otros/*.{jpeg,jpg,png,webp}');
 
 const toImages = (modules: Record<string, unknown>) =>
   Object.keys(modules)
@@ -10,46 +10,47 @@ const toImages = (modules: Record<string, unknown>) =>
     .map((path) => ({
       src: path.replace('/public', ''),
       alt: 'Trabajo en Clapton Barbería',
-    }))
+    }));
 
-const images = [...toImages(corteModules), ...toImages(otrosModules)]
+const images = [...toImages(corteModules), ...toImages(otrosModules)];
 
 export default function Gallery() {
-  const scrollerRef = useRef<HTMLDivElement>(null)
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const lightboxPrev = () => setLightboxIndex(i => i === null ? null : (i - 1 + images.length) % images.length)
-  const lightboxNext = () => setLightboxIndex(i => i === null ? null : (i + 1) % images.length)
+  const lightboxPrev = () =>
+    setLightboxIndex((i) => (i === null ? null : (i - 1 + images.length) % images.length));
+  const lightboxNext = () => setLightboxIndex((i) => (i === null ? null : (i + 1) % images.length));
 
   useEffect(() => {
-    if (lightboxIndex === null) return
+    if (lightboxIndex === null) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') lightboxPrev()
-      else if (e.key === 'ArrowRight') lightboxNext()
-      else if (e.key === 'Escape') setLightboxIndex(null)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [lightboxIndex])
+      if (e.key === 'ArrowLeft') lightboxPrev();
+      else if (e.key === 'ArrowRight') lightboxNext();
+      else if (e.key === 'Escape') setLightboxIndex(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxIndex]);
 
   const scroll = (dir: 'left' | 'right') => {
-    const el = scrollerRef.current
-    if (!el) return
-    const amount = el.clientWidth * 0.7
+    const el = scrollerRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.7;
     if (dir === 'right') {
       if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) {
-        el.scrollTo({ left: 0, behavior: 'smooth' })
+        el.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        el.scrollBy({ left: amount, behavior: 'smooth' })
+        el.scrollBy({ left: amount, behavior: 'smooth' });
       }
     } else {
       if (el.scrollLeft <= 0) {
-        el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' })
+        el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
       } else {
-        el.scrollBy({ left: -amount, behavior: 'smooth' })
+        el.scrollBy({ left: -amount, behavior: 'smooth' });
       }
     }
-  }
+  };
 
   return (
     <section id="galeria" className="w-full py-24 bg-dark overflow-hidden">
@@ -68,10 +69,7 @@ export default function Gallery() {
 
       {/* Carousel */}
       <div className="relative">
-        <div
-          ref={scrollerRef}
-          className="carousel-scroller flex gap-4 px-6"
-        >
+        <div ref={scrollerRef} className="carousel-scroller flex gap-4 px-6">
           {images.map((img, i) => (
             <div
               key={img.src}
@@ -104,7 +102,12 @@ export default function Gallery() {
             className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
           <button
@@ -135,7 +138,10 @@ export default function Gallery() {
           </button>
 
           <button
-            onClick={(e) => { e.stopPropagation(); lightboxPrev() }}
+            onClick={(e) => {
+              e.stopPropagation();
+              lightboxPrev();
+            }}
             aria-label="Anterior"
             className="absolute left-4 md:left-8 w-11 h-11 rounded-full bg-dark/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
           >
@@ -150,7 +156,10 @@ export default function Gallery() {
           />
 
           <button
-            onClick={(e) => { e.stopPropagation(); lightboxNext() }}
+            onClick={(e) => {
+              e.stopPropagation();
+              lightboxNext();
+            }}
             aria-label="Siguiente"
             className="absolute right-4 md:right-8 w-11 h-11 rounded-full bg-dark/80 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-dark transition-all duration-300"
           >
@@ -159,5 +168,5 @@ export default function Gallery() {
         </div>
       )}
     </section>
-  )
+  );
 }

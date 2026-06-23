@@ -4,7 +4,8 @@ const barbers = [
     name: 'Leo Merindol',
     role: 'Barbero experimentado',
     photo: '/equipo/leoMerindol.webp',
-    description: 'Leandro es el fundador y alma de Clapton. Con más de 18 años de experiencia en el rubro, ha construido una barbería con identidad propia, cuidando los detalle para que cada visita se convierta en una experiencia única. Su pasión por el oficio y su visión fueron claves para darle a Clapton la personalidad que la distingue hoy.',
+    description:
+      'Leandro es el fundador y alma de Clapton. Con más de 18 años de experiencia en el rubro, ha construido una barbería con identidad propia, cuidando los detalle para que cada visita se convierta en una experiencia única. Su pasión por el oficio y su visión fueron claves para darle a Clapton la personalidad que la distingue hoy.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
     wa: 'Leo+Merindol',
   },
@@ -13,7 +14,8 @@ const barbers = [
     name: 'Agus Sánchez',
     role: 'Barbero detallista',
     photo: '/equipo/agusSanchez.webp',
-    description: 'Agustín es parte fundamental de Clapton desde 2020. Con su experiencia, compromiso y una gran dedicación por su trabajo, se destaca por brindar atención personalizada y lograr que cada cliente se sienta cómodo y bien asesorado. Su profesionalismo y pasión por la barbería lo han convertido en un referente dentro de nuestro equipo.',
+    description:
+      'Agustín es parte fundamental de Clapton desde 2020. Con su experiencia, compromiso y una gran dedicación por su trabajo, se destaca por brindar atención personalizada y lograr que cada cliente se sienta cómodo y bien asesorado. Su profesionalismo y pasión por la barbería lo han convertido en un referente dentro de nuestro equipo.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
     wa: 'Agus+S%C3%A1nchez',
   },
@@ -22,7 +24,8 @@ const barbers = [
     name: 'Juan Fernández',
     role: 'Barbero experto',
     photo: '/equipo/juanFernandez.webp',
-    description: 'Juan forma parte del equipo desde 2021. Se destaca por su compromiso, atención al detalle y trato cercano con cada cliente. Su experiencia y pasión por la barbería hacen que cada servicio sea una experiencia de calidad, siempre buscando que cada persona se vaya conforme y con su mejor versión.',
+    description:
+      'Juan forma parte del equipo desde 2021. Se destaca por su compromiso, atención al detalle y trato cercano con cada cliente. Su experiencia y pasión por la barbería hacen que cada servicio sea una experiencia de calidad, siempre buscando que cada persona se vaya conforme y con su mejor versión.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
     wa: 'Juan+Fern%C3%A1ndez',
   },
@@ -31,7 +34,8 @@ const barbers = [
     name: 'Gena Rainero',
     role: 'Barbero versátil',
     photo: '/equipo/genaRainero.webp',
-    description: 'Genaro forma parte de Clapton desde 2023. Con su buena onda, amabilidad y trato cordial, se ganó rápidamente el cariño y la confianza de los clientes. Es un profesional atento, agradable y cercano, capaz de hacer sentir muy bien a cualquier persona que pase por el sillón.',
+    description:
+      'Genaro forma parte de Clapton desde 2023. Con su buena onda, amabilidad y trato cordial, se ganó rápidamente el cariño y la confianza de los clientes. Es un profesional atento, agradable y cercano, capaz de hacer sentir muy bien a cualquier persona que pase por el sillón.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
     wa: 'Gena+Rainero',
   },
@@ -40,11 +44,12 @@ const barbers = [
     name: 'Máximo Rubiolo',
     role: 'Barbero innovador',
     photo: '/equipo/maximoRubiolo.webp',
-    description: 'Máximo forma parte de Clapton desde 2024. Es el más joven del equipo y se destaca por su buena onda, su personalidad divertida y su pasión por los cortes modernos. Especialista en fades prolijos y precisos, siempre está atento a las últimas tendencias, lo que lo convierte en una gran opción para quienes buscan un estilo actual y fresco.',
+    description:
+      'Máximo forma parte de Clapton desde 2024. Es el más joven del equipo y se destaca por su buena onda, su personalidad divertida y su pasión por los cortes modernos. Especialista en fades prolijos y precisos, siempre está atento a las últimas tendencias, lo que lo convierte en una gran opción para quienes buscan un estilo actual y fresco.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
     wa: 'Maxi+Rubiolo',
   },
-]
+];
 
 const recepcionista = [
   {
@@ -52,19 +57,20 @@ const recepcionista = [
     name: 'Mayra Burgos',
     role: 'Recepcionista',
     photo: '/equipo/mayraBurgos.webp',
-    description: 'Mayra es la primera sonrisa que te recibe al llegar. Siempre atenta, cordial y predispuesta, se encarga de que cada cliente se sienta cómodo desde el primer momento. Su calidez y buena energía hacen que la experiencia en Clapton BarberShop y Gentleman sea aún más especial, brindando una atención cercana y personalizada tanto en la barbería como en el local de indumentaria.',
+    description:
+      'Mayra es la primera sonrisa que te recibe al llegar. Siempre atenta, cordial y predispuesta, se encarga de que cada cliente se sienta cómodo desde el primer momento. Su calidez y buena energía hacen que la experiencia en Clapton BarberShop y Gentleman sea aún más especial, brindando una atención cercana y personalizada tanto en la barbería como en el local de indumentaria.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
   },
-]
+];
 
-const COLS = 4
+const COLS = 4;
 
 export default function Barbers() {
-  const remainder = barbers.length % COLS
-  const fullRows = remainder > 0 ? barbers.slice(0, -remainder) : barbers
-  const lastRow = remainder > 0 ? barbers.slice(-remainder) : []
+  const remainder = barbers.length % COLS;
+  const fullRows = remainder > 0 ? barbers.slice(0, -remainder) : barbers;
+  const lastRow = remainder > 0 ? barbers.slice(-remainder) : [];
 
-  const renderBarberCard = (b: typeof barbers[0], extraClass = '') => (
+  const renderBarberCard = (b: (typeof barbers)[0], extraClass = '') => (
     <div
       key={b.id}
       id={`barber-${b.id}`}
@@ -90,9 +96,7 @@ export default function Barbers() {
           >
             {b.name}
           </h3>
-          <p className="text-gold text-xs font-semibold tracking-widest uppercase">
-            {b.role}
-          </p>
+          <p className="text-gold text-xs font-semibold tracking-widest uppercase">{b.role}</p>
         </div>
 
         <p className="text-cream/55 text-sm leading-relaxed mb-4 flex-1 text-justify">
@@ -101,8 +105,18 @@ export default function Barbers() {
 
         {/* Schedule */}
         <div className="flex items-center justify-center gap-2 mb-5">
-          <svg className="w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <svg
+            className="w-4 h-4 text-gold shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
           </svg>
           <span className="text-cream/45 text-xs">{b.schedule}</span>
         </div>
@@ -122,7 +136,7 @@ export default function Barbers() {
         </a>
       </div>
     </div>
-  )
+  );
 
   return (
     <section id="equipo" className="w-full pt-32 pb-24 bg-dark">
@@ -151,7 +165,9 @@ export default function Barbers() {
         {/* Última fila parcial — centrada */}
         {lastRow.length > 0 && (
           <div className="flex flex-wrap justify-center gap-6 mt-6">
-            {lastRow.map((b) => renderBarberCard(b, 'w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]'))}
+            {lastRow.map((b) =>
+              renderBarberCard(b, 'w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]')
+            )}
           </div>
         )}
       </div>
@@ -207,8 +223,18 @@ export default function Barbers() {
 
                 {/* Schedule */}
                 <div className="flex items-center justify-center gap-2 mb-5">
-                  <svg className="w-4 h-4 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    className="w-4 h-4 text-gold shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                   <span className="text-cream/45 text-xs">{b.schedule}</span>
                 </div>
@@ -218,5 +244,5 @@ export default function Barbers() {
         </div>
       </div>
     </section>
-  )
+  );
 }

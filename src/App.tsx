@@ -1,19 +1,17 @@
-import './index.css'
-import { Analytics } from '@vercel/analytics/react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import AboutUs from './components/AboutUs'
-import Gallery from './components/Gallery'
-import Services from './components/Services'
-import Barbers from './components/Barbers'
-import Info from './components/Info'
-import Footer from './components/Footer'
-import WhatsAppFab from './components/WhatsAppFab'
+import './index.css';
+import { Analytics } from '@vercel/analytics/react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
+import Gallery from './components/Gallery';
+import Services from './components/Services';
+import Barbers from './components/Barbers';
+import Info from './components/Info';
+import Footer from './components/Footer';
+import WhatsAppFab from './components/WhatsAppFab';
 
 function SectionDivider() {
-  return (
-    <div className="w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
-  )
+  return <div className="w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />;
 }
 
 function App() {
@@ -35,7 +33,7 @@ function App() {
       <WhatsAppFab />
       <Analytics />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

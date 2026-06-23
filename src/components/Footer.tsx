@@ -2,10 +2,8 @@ export default function Footer() {
   return (
     <footer className="w-full bg-dark border-t border-gold/10 py-10">
       <div className="w-full max-w-6xl mx-auto px-6">
-
         {/* Main row: logo | copyright | socials */}
         <div className="flex items-center justify-between gap-4">
-
           {/* Logo – left */}
           <img
             src="/logos/logoHorizontal.webp"
@@ -81,8 +79,7 @@ export default function Footer() {
             salvaCastro
           </a>
         </p>
-
       </div>
     </footer>
-  )
+  );
 }

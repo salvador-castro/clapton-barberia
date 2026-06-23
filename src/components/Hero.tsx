@@ -48,7 +48,10 @@ export default function Hero() {
 
         <h1
           className="font-bebas text-7xl md:text-[10rem] leading-none tracking-wider mb-4 animate-fade-in-up text-gold-gradient"
-          style={{ fontFamily: "'Bebas Neue', sans-serif", animationDelay: '0.2s' }}
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            animationDelay: '0.2s',
+          }}
         >
           CLAPTON
           <span className="sr-only"> Barbershop - Barbería en Villa María, Córdoba</span>
@@ -56,7 +59,10 @@ export default function Hero() {
 
         <p
           className="font-bebas text-2xl md:text-4xl tracking-[0.5em] text-cream/60 mb-8 animate-fade-in-up"
-          style={{ fontFamily: "'Bebas Neue', sans-serif", animationDelay: '0.35s' }}
+          style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            animationDelay: '0.35s',
+          }}
         >
           BARBERSHOP
         </p>
@@ -99,5 +105,5 @@ export default function Hero() {
         </svg>
       </div>
     </section>
-  )
+  );
 }
