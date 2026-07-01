@@ -51,7 +51,7 @@ const barbers = [
     photo: '/equipo/emilianoOficialdegui.jpeg',
     description: 'Emiliano es barbero desde 2018, aporta experiencia, profesionalismo y pasión por la barbería, siempre enfocado en la calidad de cada corte. Su llegada nos da un aire renovado a nuestro equipo.',
     schedule: 'Lun–Vie: 9 a 20 h · Sáb: 10 a 16 h',
-    wa: 'Emiliano+Oficialdegui',
+    wa: 'Emiliano',
   },
 ]
 
