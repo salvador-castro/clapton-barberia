@@ -28,17 +28,17 @@ export default function AboutUs() {
             <span className="text-gold font-semibold">6 barberos profesionales</span>, una
             recepcionista dedicada a que cada visita sea cómoda y organizada, y servicios{' '}
             <span className="text-gold font-semibold">PREMIUM</span> diseñados para quienes valoran
-            los detalles. Cada servicio incluye la posibilidad de disfrutar un café o una gaseosa de
+            los detalles. También está incluida la posibilidad de disfrutar un café o una gaseosa de
             cortesía en un ambiente relajado y con identidad propia.
           </p>
 
           <p>
-            Pero Clapton es mucho más que una barbería. También contamos con{' '}
-            <span className="text-gold font-semibold">Gentleman</span>, nuestro espacio de
-            indumentaria masculina, pensado para que puedas completar tu estilo en un solo lugar.
+            Además, contamos con{' '}
+            <span className="text-gold font-semibold">Gentleman!</span>, nuestro espacio de indumentaria
+            masculina, pensado para que puedas completar tu estilo en un solo lugar.
           </p>
 
-          <p className="text-cream/90 font-medium">
+          <p>
             Más que un corte de cabello, ofrecemos una experiencia. Desde 2014, seguimos creciendo
             junto a nuestros clientes, manteniendo la misma pasión por el oficio y el compromiso con
             la excelencia.
