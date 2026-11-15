@@ -49,7 +49,7 @@ const barbers = [
   },
 {
     id: 'pablo-suarez',
-    name: 'Pablo Suárwz',
+    name: 'Pablo Suárez',
     role: 'Barbero',
     photo: '/equipo/pablosuarez.jpeg',
     description: 'Barbero desde 2018, con amplia experiencia en cortes con máquina, cabellos largos y perfilados de barba. Se suma a Clapton como refuerzo para los días sábado, aportando experiencia al equipo y mejorar la atención al cliente.',
