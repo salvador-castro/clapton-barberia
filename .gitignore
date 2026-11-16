@@ -40,3 +40,5 @@ Thumbs.db
 # AI and tool configurations
 .claude/
 .eslintcache
+.vercel
+.env*
