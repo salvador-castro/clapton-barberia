@@ -60,7 +60,7 @@ const barbers = [
     photo: '/equipo/pabloSuarez.webp',
     description:
       'Barbero desde 2018, con amplia experiencia en cortes con máquina, cabellos largos y perfilados de barba. Se suma a Clapton como refuerzo para los días sábado, aportando experiencia al equipo y mejorar la atención al cliente.',
-    wa: 'Pablo Sanchez'
+    wa: 'Pablo Suárez'
   }
 ]
 
